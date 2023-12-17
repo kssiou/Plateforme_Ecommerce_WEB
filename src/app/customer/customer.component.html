@@ -1,0 +1,38 @@
+<!-- The AG Grid component -->
+<!-- Add button using PrimeNG Button component -->
+<p-table [value]="customers" [tableStyle]="{'min-width': '100rem'}">
+    <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+            customers
+            <p-button>Enregistrer customers</p-button>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width: 25%;">ID</th>
+            <th style="width: 25%;">Name</th>
+            <th style="width: 25%;">email</th>
+            <th style="width: 25%;">Orders</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-customers>
+        <tr>
+            <td style="width: 25%;">{{ customers.id }}</td>
+            <td style="width: 25%;">{{ customers.name }}</td>
+            <td style="width: 25%;">{{ customers.email }}</td>
+            <!-- New column for buttons -->
+            <td style="width: 25%;">
+                <!-- Update button -->
+                <p-button icon="pi pi-bookmark" label="order" severity="warning " (click)="onInfoButtonClick(customers)"></p-button>
+
+                <!-- Delete button -->
+
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+            In total there are {{ customers ? customers.length : 0 }} customerss.
+        </div>
+    </ng-template>
+</p-table>

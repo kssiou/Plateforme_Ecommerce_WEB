@@ -1,29 +1,15 @@
 import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-
-
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  selector: 'app-customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.scss']
 })
-export class ProductListComponent {
-
-  products :any;
-  constructor(private http:HttpClient) { }
-
-  ngOnInit(): void {
-    this.http.get("http://localhost:9999/inventory-service/products?projection=fullProduct").subscribe({
-      next : (data)=>{
-        console.log(data);
-        this.products=data;
-      },
-      error : (err)=>{
-        console.log(err);
-      }
-    });
-  }
+export class CustomerComponent {
+  customers = [
+    { id: '001', name: 'Product A', email:"mouad@gmail.com" },
+ 
+  ];
   onAddButtonClick() {
     // Add your logic here for handling the "Add" button click
     console.log('Add button clicked');

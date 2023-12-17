@@ -1,0 +1,87 @@
+<div class="grid">
+    <div class="col-12">
+        <div class="card">
+            <h2>Order Details</h2>
+            <p-toolbar class="toolbar-container">
+                <div class="p-toolbar-group-left flex justify-content-center">
+                    <div class="p-field">
+                        <label for="order_id" style="margin-right: 10px;">Order ID </label>
+                        <input type="text" id="order_id" pInputText [readonly]="true" />
+                    </div>
+                    <div class="p-field">
+                        <label for="Customer_id" style="margin-right: 10px;">Customer ID</label>
+                        <input type="text" id="Customer_id" pInputText [readonly]="true" />
+                    </div>
+                    <div class="p-field">
+                        <label for="status" style="margin-right: 10px;">Status</label>
+                        <input type="text" id="status" pInputText [readonly]="true" />
+                    </div>
+                    <div class="p-field">
+                        <label for="date" style="margin-right: 10px;">Date</label>
+                        <input type="text" id="date" pInputText [readonly]="true" />
+                    </div>
+                </div>
+            </p-toolbar>
+
+
+        </div>
+
+
+
+    </div>
+
+    <div class="col-12 md:col-5">
+        <div class="card">
+            <h2>Customer Info</h2>
+            <form style="margin-top: 20px; font-size: 16px;" class="custom-form">
+                <div class="p-field" style="margin-bottom: 15px;">
+                    <label for="id">id</label>
+                    <input type="text" id="id" pInputText style="margin-left: 170px; padding: 10px; width: 300px;" [readonly]="true" />
+                </div>
+
+                <div class="p-field" style="margin-bottom: 15px;">
+                    <label for="Customer_id">Customer_id</label>
+                    <input type="Customer_id" id="Customer_id" pInputText style="margin-left: 90px; padding: 10px; width: 300px;" [readonly]="true" />
+                </div>
+
+                <div class="p-field" style="margin-bottom: 15px;">
+                    <label for="status">status</label>
+                    <input type="status" id="status" pInputText style="margin-left: 140px; padding: 10px; width: 300px;" [readonly]="true" />
+                </div>
+
+
+
+            </form>
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="col-12 md:col-7">
+        <div class="card">
+            <h2>Products Info</h2>
+            <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>quantity</th>
+                        <th>Quantity</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{ product.quantity }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+        </div>
+    </div>
+</div>
